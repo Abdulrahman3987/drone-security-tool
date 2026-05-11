@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/Scripts/python train_model.py)",
+      "Bash(find /c/Users/mddm7/Desktop/GPtool/drone_security_tool -type d -not -path */__pycache__* -not -path */.venv*)",
+      "Read(//c/Users/mddm7/Desktop/ISOT Drone Dataset//**)",
+      "Read(//c/Users/mddm7/Desktop/**)",
+      "Bash(done)",
+      "Bash(ls /c/Users/mddm7/Desktop/GPtool/drone_security_tool/ml/*.pkl)",
+      "Bash(.venv/Scripts/python -c \":*)",
+      "Bash(.venv/Scripts/python test_ml.py)",
+      "Bash(../.venv/Scripts/python -c \":*)"
+    ]
+  }
+}

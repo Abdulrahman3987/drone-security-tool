@@ -1,0 +1,71 @@
+{
+    "model_type": "RandomForest",
+    "model_path": "drone_security_tool/ml/model.pkl",
+    "scaler_path": "drone_security_tool/ml/scaler.pkl",
+    "label_encoder_path": "drone_security_tool/ml/label_encoder.pkl",
+    "feature_defaults_path": "drone_security_tool/ml/feature_defaults.pkl",
+
+    "dataset_folders": {
+        "Regular": "Normal",
+        "DoS": "Attack",
+        "MITM": "Attack",
+        "Injection": "Attack",
+        "Replay": "Attack",
+        "Spoofing": "Attack",
+        "Flooding": "Attack",
+        "Deauth": "Attack",
+        "Evil_Twin": "Attack"
+    },
+
+    "multiclass_labels": {
+        "Regular": "Normal",
+        "DoS": "DoS",
+        "MITM": "MITM",
+        "Injection": "Injection",
+        "Replay": "Replay",
+        "Spoofing": "Spoofing",
+        "Flooding": "Flooding",
+        "Deauth": "Deauth",
+        "Evil_Twin": "Evil_Twin"
+    },
+
+    "drop_columns": [
+        "Flow ID",
+        "Src IP",
+        "Dst IP",
+        "Timestamp",
+        "Label"
+    ],
+
+    "tool_to_dataset_mapping": {
+        "open_ports_count":    "Total Fwd Packets",
+        "has_control_port":    "Dst Port",
+        "has_telemetry_port":  "Dst Port",
+        "has_video_port":      "Dst Port",
+        "has_mavlink":         "Protocol",
+        "has_unknown_protocol":"Protocol",
+        "wifi_security_level": null,
+        "ping_loss":           "Pkt Loss Rate",
+        "avg_latency_ms":      "Flow IAT Mean",
+        "diag_success":        null
+    },
+
+    "risk_score_bands": {
+        "Normal":     [0, 30],
+        "Suspicious": [31, 69],
+        "Attack":     [70, 100]
+    },
+
+    "random_forest_params": {
+        "n_estimators": 150,
+        "max_depth": 20,
+        "min_samples_split": 5,
+        "min_samples_leaf": 2,
+        "class_weight": "balanced",
+        "random_state": 42,
+        "n_jobs": -1
+    },
+
+    "test_size": 0.2,
+    "random_state": 42
+}

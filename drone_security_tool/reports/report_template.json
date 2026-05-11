@@ -1,0 +1,9 @@
+{
+  "title": "Drone Security Assessment Report",
+  "subtitle": "Security posture summary for live and simulated drone scans",
+  "footer": "Drone Security Assessment Tool",
+  "classification": "Assessment Report",
+  "primary_color": "#1a365d",
+  "accent_color": "#0d9488",
+  "analyst": "GPtool"
+}
